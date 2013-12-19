@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <title>IMC</title> 
+
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+                
+                <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+                <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+                <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+                <script>
+                        function sum()
+                        {
+                                var id_peso = document.getElementById('id_peso').value;
+                                var id_altura = document.getElementById('id_altura').value;
+                
+                
+                            {
+                                result = parseFloat(id_peso)/(parseFloat(id_altura)*parseFloat(id_altura));
+                                document.getElementById("showResult").innerHTML = "IMC: "+(result);
+                            }
+                        }
+                </script>
+        </head>
+        <body>
+                <!-- Home -->
+                <div data-theme="a" data-role="page" id="page1">
+                        <div data-theme="a" data-role="header">
+                                <h3>
+                                    IMC
+                                </h3>
+                        </div>
+
+
+                        <div data-role="content">
+                                <div data-role="fieldcontain">
+                                        <label for="id_peso">
+                                                Peso
+                                        </label>
+                                        <input name="id_peso" id="id_peso" placeholder="" value="" type="number">
+                                </div>
+
+
+                                <div data-role="fieldcontain">
+                                        <label for="id_altura">
+                                                Altura
+                                        </label>
+                                        <input name="id_altura" id="id_altura" placeholder="" value="" type="number">
+                                </div>
+
+                                <a href="#page3" data-role="button" data-theme="b" data-transition="slidefade" onclick="sum();">Calcular</a>
+
+                        </div>
+
+
+                        <div data-role="footer" data-position="fixed">
+                                <h3>
+                                        Footer
+                                </h3>
+                        </div>
+                        <span id="showResult"></span>
+                </div>
+
+        </body>
+</html>
